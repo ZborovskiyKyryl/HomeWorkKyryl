@@ -7,15 +7,15 @@ public class LoginToWiki extends TestBase {
 
     @Test
     public void loginToWiki() {
-        driver.get("https://en.wikipedia.org");
+        app.driver.get("https://en.wikipedia.org");
 
-        click(By.id("pt-login"));
-        type(By.name("wpName"));
+        app.click(By.id("pt-login"));
+        app.type(By.name("wpName"));
 
-        type(By.name("wpPassword"), "111");
+        app.type(By.name("wpPassword"), "111");
 
-        click(By.name("wpRemember"));
-        click(By.name("wploginattempt"));
+        app.click(By.name("wpRemember"));
+        app.click(By.name("wploginattempt"));
 
 
 

@@ -3,7 +3,7 @@ package com.telran.selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class app {
+public class ApplicationManadger {
 
     WebDriver driver;
 

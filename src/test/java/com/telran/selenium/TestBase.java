@@ -6,15 +6,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class TestBase extends app  {
+public class TestBase {
+
+    protected static ApplicationManadger app = new ApplicationManadger();
+
+
+
     @BeforeMethod
     public void setUp(){
-        driver = new ChromeDriver();
+
+        app.driver = new ChromeDriver();
     }
 
     @AfterMethod
     public void tearDown(){
-        driver.quit();
+
+        app.driver.quit();
     }
 
 
