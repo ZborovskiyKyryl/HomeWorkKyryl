@@ -10,17 +10,13 @@ public class TestBase {
 
     protected static ApplicationManadger app = new ApplicationManadger();
 
-
-
     @BeforeMethod
     public void setUp(){
-
-        app.driver = new ChromeDriver();
+        app.init();
     }
 
     @AfterMethod
     public void tearDown(){
-
         app.driver.quit();
     }
 

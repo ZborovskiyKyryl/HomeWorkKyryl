@@ -2,25 +2,33 @@ package com.telran.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ApplicationManadger {
+import java.util.concurrent.TimeUnit;
 
+public class ApplicationManadger   {
     WebDriver driver;
+    LoginHelper loginHelper;
+    SessionHelper sessionHelper;
 
-    public void type(By locator) {
-        click(locator);
-        driver.findElement(By.name("wpName")).clear();
-        driver.findElement(By.name("wpName")).sendKeys("chachacha");
+
+    public void init(){
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        sessionHelper = new SessionHelper(driver);
+        loginHelper = new LoginHelper(driver);
+
     }
 
-    public void click(By locator)
-    {
-        driver.findElement(locator).click();
+
+
+    public LoginHelper getLoginHelper(){
+        return loginHelper;
     }
 
-    public void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
+    public SessionHelper getSessionHelper(){
+        return sessionHelper;
     }
+
+
 }
